@@ -16,7 +16,7 @@ export default function SignupForm(){
         password:''
     })
 
-    //Change the baackgrounf color
+    //Change the background color
     const getBackgroundColor = () => {
         if (enabled) {
           return isHovered ? '#0000ff' : '#0066ff';
