@@ -79,12 +79,16 @@ code {
   display: flex;
   align-items: center;
   gap: 1rem;
+  line-height: 16px;
+  max-width: 100%;
+  
 }
 
 .links div a {
   color: rgb(144, 144, 144);
   text-decoration: none;
   cursor: pointer;
+  max-width: 100%;
 }
 
 .links div a:hover {
@@ -447,13 +451,12 @@ select {
   flex-direction: column;
   align-items: center;
   vertical-align: baseline;
-  margin-bottom:44px ;
+  margin: 0 0 10px;
   min-height: 100%;
   box-sizing: border-box;
 }
 
 .birthdayForm{
-  margin: 0 0 10px;
   box-sizing: border-box;
   border: solid thin lightgrey;
   display: flex;
@@ -576,10 +579,25 @@ select {
   width: auto;
   text-align: center;
   padding: 0;
-  margin: 0;
+  margin-bottom: 10px;
   line-height:14px;
   font-size: 14px;
   font-weight: 600;
 }
 
+.goBack:hover{
+  cursor: pointer;
+  color: darkblue;
+ 
+}
+.birthdayContainer{
+  margin-top: 60px;
+  margin-bottom: 44px;
+  min-height: 100%;
+  
+}
+
+.birthdayFooter{
+  margin-top: 30px;
+}
 /* @media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)  */
