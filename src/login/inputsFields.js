@@ -1,16 +1,14 @@
 import React from "react";
-// import 
+
+
 
 export default function Input (props){
-    const{className, type, name, placeholder, maxLength, autoCapitalize, autoCorrect, required }= props;
+    const{className, type, name, placeholder, maxLength, autoCapitalize, autoCorrect, required, onChange}= props;
 
-    // let [user, setUser] = useState({})
-
-    // const handleChange = () =>{
-
-    // }
+    
 
     return (
+        <>
         <input
             className={className}
             type={type}
@@ -20,8 +18,9 @@ export default function Input (props){
             autoCapitalize={autoCapitalize}
             autoCorrect={autoCorrect}
             required={required}
-            // onChange={handleChange}
+            onChange={onChange}
             />
+        </>
     );
        
 }
