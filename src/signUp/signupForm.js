@@ -1,21 +1,31 @@
 import React, {useState, useEffect} from 'react';
 import Input from '../login/inputsFields';
 import { Link } from 'react-router-dom';
-
+import { regEx } from './regEx';
 
 export default function SignupForm(){
 
+    
+
+    let [enabled, setEnabled] = useState(false);
+    let [isHovered, setIsHovered] = useState(false);
     let [user, setUser] = useState({
-        email:'',
+        emailPhone:'',
         name:'',
         username:'',
         password:''
     })
 
-    const [enabled, setEnabled] = useState(false);
-
+    //Change the baackgrounf color
+    const getBackgroundColor = () => {
+        if (enabled) {
+          return isHovered ? '#0000ff' : '#0066ff';
+        }
+        
+      };
+    
+    //Handle the change in the inputs fields
     const handleChange = (event) =>{
-        console.log('handlechange')
         const {name, value } = event.target;
         setUser({...user, [name]: value});
         console.log(user)
@@ -23,23 +33,19 @@ export default function SignupForm(){
     
     }
 
+    
     useEffect(()=>{
-        console.log(user)
-        console.log('user.email:', user.email);
-        console.log('user.name:', user.name);
-        console.log('user.username:', user.username);
-        console.log('user.password:', user.password);
-            const isEmail = user.email.length>10;
-            const isName = user.name.length>10;
-            const isUsername = user.username.length>5;
-            const isPassword = user.password.length>8;
+        const isEmailPhone = user.emailPhone.length>=10 && (regEx.find(item=>item.name==='email').reg.test(user.emailPhone) || regEx.find(item=>item.name==='phone').reg.test(user.emailPhone));
+        const isName = user.name.length>10;
+        const isUsername = user.username.length>5;
+        const isPassword = user.password.length>8 && regEx.find(item=>item.name==='password').reg.test(user.password);
 
-            const isEnabled =(isEmail&&isName&&isUsername&&isPassword);
+        const isEnabled =(isEmailPhone&&isName&&isUsername&&isPassword);
 
-            setEnabled(isEnabled);
-            console.log('ciao',isEnabled)
+        setEnabled(isEnabled);
+         
 
-        }, [user, enabled]);
+    }, [user, enabled]);
 
 
     
@@ -72,8 +78,8 @@ export default function SignupForm(){
                 <form className='form'>
                     <Input 
                         className="email"
-                        type="email"
-                        name="email"
+                        type="text"
+                        name="emailPhone"
                         placeholder="Mobile Number,  or Email"
                         autoCapitalize="off"
                         autoCorrect="off"
@@ -85,6 +91,7 @@ export default function SignupForm(){
                         className="name"
                         type="text"
                         name="name"
+                        maxLength="50"
                         placeholder="Full Name"
                         autoCapitalize="off"
                         autoCorrect="off"
@@ -108,6 +115,7 @@ export default function SignupForm(){
                         type="password"
                         name="password"
                         placeholder="Password"
+                        minLength ="8"
                         autoCapitalize="off"
                         autoCorrect="off"
                         required
@@ -128,8 +136,11 @@ export default function SignupForm(){
                     <button 
                         className='login next' 
                         type='submit'
-                        style={{backgroundColor: enabled && 'rgb(0, 128, 244)'}}
-                        disabled={!enabled} 
+                        // style={{backgroundColor: enabled && 'rgb(0, 135, 217)'}}
+                        onMouseEnter={()=>setIsHovered(true)}
+                        onMouseLeave={()=>setIsHovered(false)}
+                        style={{backgroundColor: getBackgroundColor()}}
+                        disabled={!enabled}  
                     >   
                         Next
                     </button>
