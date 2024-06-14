@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 import Input from '../login/inputsFields';
 import { Link } from 'react-router-dom';
 import { regEx } from './regEx';
 
 export default function SignupForm(){
-
-    
+    const navigate = useNavigate();
 
     let [enabled, setEnabled] = useState(false);
     let [isHovered, setIsHovered] = useState(false);
@@ -13,7 +13,8 @@ export default function SignupForm(){
         emailPhone:'',
         name:'',
         username:'',
-        password:''
+        password:'',
+        
     })
 
     //Change the background color
@@ -28,14 +29,20 @@ export default function SignupForm(){
     const handleChange = (event) =>{
         const {name, value } = event.target;
         setUser({...user, [name]: value});
-        console.log(user)
-        
-    
+    }
+
+    //Handle Next Button Click
+    const handleClick = (event) =>{
+        event.preventDefault();
+
+        navigate('/accounts/signup/birthday')
     }
 
     
     useEffect(()=>{
-        const isEmailPhone = user.emailPhone.length>=10 && (regEx.find(item=>item.name==='email').reg.test(user.emailPhone) || regEx.find(item=>item.name==='phone').reg.test(user.emailPhone));
+        const isEmailPhone = user.emailPhone.length>=10 && 
+                            (regEx.find(item=>item.name==='email').reg.test(user.emailPhone) || 
+                            regEx.find(item=>item.name==='phone').reg.test(user.emailPhone));
         const isName = user.name.length>10;
         const isUsername = user.username.length>5;
         const isPassword = user.password.length>8 && regEx.find(item=>item.name==='password').reg.test(user.password);
@@ -130,11 +137,11 @@ export default function SignupForm(){
                     <button 
                         className='login next' 
                         type='submit'
-                        // style={{backgroundColor: enabled && 'rgb(0, 135, 217)'}}
                         onMouseEnter={()=>setIsHovered(true)}
                         onMouseLeave={()=>setIsHovered(false)}
                         style={{backgroundColor: getBackgroundColor()}}
                         disabled={!enabled}  
+                        onClick={handleClick}
                     >   
                         Next
                     </button>
