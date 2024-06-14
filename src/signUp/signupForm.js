@@ -48,12 +48,6 @@ export default function SignupForm(){
     }, [user, enabled]);
 
 
-    
-
-
-
-
-  
     return(
         
             <div className="loginForm signupForm">
