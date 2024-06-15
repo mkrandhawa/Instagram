@@ -13,7 +13,7 @@ export default function App(){
                 
                 <Route exact path='/accounts/signup' element={<SignUpPage />} />
 
-                <Route exact path='/accounts/signup/birthday' element={<BirthdayPage />} />
+                 <Route exact path='/accounts/signup/birthday' element={<BirthdayPage />} />
 
                 <Route exact path='/' element={<h1>Hello</h1>} />
 
