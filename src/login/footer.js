@@ -5,7 +5,7 @@ import Dropdown from "./dropdown";
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer birthdayFooter">
       <div className="links">
         {/* Using map function to create a div for each element and with its links and name */}
         <div>
