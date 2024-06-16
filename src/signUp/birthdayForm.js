@@ -25,7 +25,7 @@ export default function BirthdayInfo(){
     };
 
     const handleClick = ()=>{
-        navigate('/')
+        navigate('/accounts/signup/confirmation')
     }
 
     const handleChange = (event) =>{
@@ -63,7 +63,7 @@ export default function BirthdayInfo(){
                     <div>    
                         <p className="instruction">Add your date of birth</p>
                     </div>
-                    <div className=""> 
+                    <div> 
                         <p className="info">This won't be part of your public profile.</p>
                         <button type="button" className="reason">
                             <span>Why do I need to provide my date of birth?</span>
@@ -96,7 +96,7 @@ export default function BirthdayInfo(){
                         </div>                                                   
                         
 
-                        <div className="datee">
+                        <div>
                             <div className="dropdownDates"></div>
                             <div className='p3'>                    
                                 <p>You need to enter the date you were born on</p>
