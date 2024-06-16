@@ -5,7 +5,7 @@ import GetApp from "../login/getApp";
 
 export default function SignUpCard(){
     return(
-        <main className="loginCard signUpCard">
+        <main className="signUpCard">
             <SignupForm />
             <Account question= 'Have an account?' text="Log in" path='/accounts/login'/>
             <GetApp />
