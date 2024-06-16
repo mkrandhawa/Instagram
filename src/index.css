@@ -18,10 +18,18 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
+  vertical-align: baseline;
+  flex-grow: 1;
   width: 100%;
-  padding-bottom: 22px;
+  padding-bottom: 32px;
   margin-top: 32px;
  
+}
+
+.loginContainer{
+  margin-top:32px;
+  padding-bottom: 32px;
 }
 .signupContainer{
   margin-top: 38px;
@@ -33,10 +41,13 @@ code {
   background-image: url(https://static.cdninstagram.com/images/instagram/xig/homepage/phones/home-phones.png?__makehaste_cache_breaker=HOgRclNOosk);
   width: 440px;
   height: 635px;
+  
 }
 
 .loginCard {
-  margin-top: -30px;
+  margin-top: 90px;
+  max-width: 350px;
+  margin-bottom: 40px;
 }
 
 .loginForm {
@@ -46,6 +57,8 @@ code {
   width: 350px;
   height: 400px;
   display: flex;
+  flex-grow: 1;
+  justify-content: center;
   flex-direction: column;
   vertical-align: baseline;
   align-items: center;
@@ -66,6 +79,7 @@ code {
 .footer {
   display: flex;
   flex-direction: column;
+  justify-content: baseline;
   align-items: center;
   padding-right: 16px;
   padding-left: 16px;
@@ -281,6 +295,7 @@ select {
   font-weight: 600;
   margin-left: 2px;
   padding: 10px 0;
+  cursor: pointer;
 }
 
 .download {
@@ -385,6 +400,14 @@ select {
 
 .name, .uName, .pass{
   margin-top:-3px;
+}
+
+.email:focus,
+.name:focus,
+.uName:focus,
+.pass:focus{
+  outline: none;
+  border-color: #bdbdbd; /* Change to your desired color */
 }
 
 
@@ -597,7 +620,127 @@ select {
   
 }
 
+.birthdayCard{
+  margin-top:25px;
+}
+
 .birthdayFooter{
   margin-top: 30px;
+}
+
+.confirmation{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.card{
+  box-sizing: border-box;
+  border: solid thin lightgrey;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  vertical-align: baseline;
+  align-items: center;
+  margin-top: 12px;
+  max-width: 350px;
+  padding: 10px 0;
+  min-height: 100%;
+}
+
+.confirmWrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 8px 28px;
+}
+
+.emailPicture{
+  height: 72px;
+  width: 92px;
+  background-image: url(https://static.cdninstagram.com/rsrc.php/v3/yz/r/quLU_xi5ZD1.png);
+  background-size: 553px 528px;
+  background-position: -436px 0;
+    
+}
+
+.cInstructions{
+  margin-top:10px;
+  margin-bottom: 8px;
+}
+
+.confirmCode{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-align: center;
+  width: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 8px;
+
+}
+
+
+.resendCode{
+  color:rgb(0, 149, 246);
+  line-height: 14px;
+  font-weight: 600;
+}
+.resendCode:hover{
+  color:darkblue;
+
+}
+
+.codeInput{
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 14px;
+  padding: 1px 6px;
+  margin-bottom:16px
+}
+
+.codeInput:focus{
+  outline: none;
+  border-color: #bdbdbd; /* Change to your desired color */
+  
+}
+
+.cNext{
+  margin-bottom: 16px;
+  background-color: rgb(153, 197, 244);
+  color: rgb(227, 227, 227);
+}
+
+.cBack{
+  margin: bottom -10px;
+}
+
+.confirmationCard{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.confirmationContainer{
+  margin-bottom: 44px;
+  min-height: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 764px;
+  padding-bottom: 0;
+}
+
+.confirmationForm{
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 /* @media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)  */
