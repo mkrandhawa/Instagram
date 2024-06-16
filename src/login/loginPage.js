@@ -6,7 +6,7 @@ import Footer from "./footer";
 function LoginPage() {
   return (
     <article>
-      <div className="container">
+      <div className="container logincontainer">
         <Phones />
         <LoginCard />
       </div>
