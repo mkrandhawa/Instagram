@@ -340,12 +340,12 @@ select {
 }
 
 .signupForm{
-  margin-top: 42px;
+  /* margin-top: 42px; */
   height: auto;
 }
 
 .fb-button{
-  background-color: rgb(61, 150, 239);
+  background-color: #0065ff;
   align-items: baseline;
 }
 
