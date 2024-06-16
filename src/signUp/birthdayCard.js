@@ -6,7 +6,7 @@ import GetApp from "../login/getApp";
 
 export default function BirthdayCard(){
     return(
-        <main>
+        <main className="birthdayCard">
             <BirthdayInfo />
             <Account question= 'Have an account?' text="Log in" path='/accounts/login' />
             <GetApp />
