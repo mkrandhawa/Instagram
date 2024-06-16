@@ -17,7 +17,7 @@ export default function App(){
 
                  <Route exact path='/accounts/signup/confirmation' element={<ConirmationPage />} />
 
-                <Route exact path='/' element={<h1>Hello</h1>} />
+                <Route exact path='/' element={<LoginPage />} />
 
                     
             </Routes>
