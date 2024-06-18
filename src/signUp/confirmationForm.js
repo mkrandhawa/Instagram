@@ -7,7 +7,7 @@ import Input from '../login/inputsFields';
 
 export default function ConfirmationForm(){
 
-    let [code, setCode] = useState(0);
+    let [code, setCode] = useState('');
 
     let [enabled, setEnabled] = useState(false);
 
@@ -29,7 +29,6 @@ export default function ConfirmationForm(){
 
 
     const handleChange = (event)=>{
-
         setCode(event.target.value)
     }
 
@@ -41,7 +40,7 @@ export default function ConfirmationForm(){
     useEffect(()=>{
         console.log('i am code', code)
       
-        code.length >= 6 ? setEnabled(true) :setEnabled(false)
+        code && code.length >= 6 ? setEnabled(true) :setEnabled(false)
 
 
         
@@ -66,7 +65,6 @@ export default function ConfirmationForm(){
                     
                     <form method="POST">
                         <Input 
-
                             className='email codeInput'
                             type="text"
                             name="code"
