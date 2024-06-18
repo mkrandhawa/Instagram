@@ -3,7 +3,7 @@ import React from "react";
 
 
 export default function Input (props){
-    const{className, type, name, placeholder, maxLength, autoCapitalize, autoCorrect, required, onChange, minLength}= props;
+    const{className, type, name, placeholder, maxLength, autoCapitalize, autoCorrect, required, onChange, minLength, value}= props;
 
     
 
@@ -20,6 +20,7 @@ export default function Input (props){
             autoCorrect={autoCorrect}
             required={required}
             onChange={onChange}
+            value={value}
             />
         </>
     );
