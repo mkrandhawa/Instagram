@@ -1,11 +1,15 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useContext} from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Input from '../login/inputsFields';
+import { UserContext } from '../context/userContext';
+
 
 
 
 export default function ConfirmationForm(){
+
+    const {user} = useContext(UserContext);
 
     let [code, setCode] = useState('');
 
@@ -57,7 +61,7 @@ export default function ConfirmationForm(){
                     <p className="instruction cInstructions">Enter confirmation code.</p>
                 </div>
                 <div className="confirmCode">
-                    <p>Enter the confirmation code that we sent to cghghcjjc@gmail.com. <Link to={'/accounts/signup/confirmation'} className='link resendCode'> Resend Code.</Link></p>
+                    <p>Enter the confirmation code that we sent to {user.emailPhone}. <Link to={'/accounts/signup/confirmation'} className='link resendCode'> Resend Code.</Link></p>
                 </div>
                 </div>
 
