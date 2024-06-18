@@ -1,10 +1,10 @@
 import React from 'react';
 
 export default function Select(props){
-    const{title, options, name, onChange} = props;
+    const{title, options, name, onChange, value} = props;
 
     return(
-        <select title={title}  className='options' onChange={onChange} name={name}>
+        <select title={title}  className='options' onChange={onChange} name={name} value={value}>
             
             {
                 options.map((el, index)=>(
