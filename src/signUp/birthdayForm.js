@@ -1,19 +1,16 @@
-import React, {useState, useEffect} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import Select from "./select";
 import { Months, Years, Days} from "./options";
+import { UserContext } from "../context/userContext";
 
 export default function BirthdayInfo(){
 
+    const { user, setUser} = useContext(UserContext);
+    
     let [enabled, setEnabled] = useState(false);
-
     let [isHovered, setIsHovered] = useState(false);
 
-    let[dob, setDob] = useState({
-        month: '',
-        day:'',
-        year:''
-    })
 
     const navigate = useNavigate();
 
@@ -24,13 +21,14 @@ export default function BirthdayInfo(){
         
     };
 
-    const handleClick = ()=>{
+    const handleClick = (event)=>{
+        event.preventDefault();
         navigate('/accounts/signup/confirmation')
     }
 
     const handleChange = (event) =>{
         const {name, value } = event.target;
-        setDob({...dob, [name]: value});
+        setUser({...user, dob: {...user.dob, [name]: value}});
        
     }
 
@@ -41,14 +39,14 @@ export default function BirthdayInfo(){
     }
 
     useEffect(() => {
-        // console.log('dov',dob)
-        if (dob.year) {
+        console.log('dov',user.dob)
+        if (user.dob.year) {
             const currentYear = new Date().getFullYear();
-            const userAge = currentYear - parseInt(dob.year, 10);
+            const userAge = currentYear - parseInt(user.dob.year, 10);
             
             setEnabled(userAge >= 18);
         }
-    }, [dob, enabled]);
+    }, [user.dob, setEnabled]);
 
   
 
@@ -78,6 +76,7 @@ export default function BirthdayInfo(){
                             options={Months}
                             name='month'
                             onChange={handleChange}
+                            value={user.dob.month}
 
                         />
                         <Select 
@@ -85,6 +84,7 @@ export default function BirthdayInfo(){
                             options={Days}
                             name='day'
                             onChange={handleChange}
+                            value={user.dob.day}
 
                         />
                         <Select 
@@ -92,6 +92,7 @@ export default function BirthdayInfo(){
                             options={Years}
                             name='year'
                             onChange={handleChange}
+                            value={user.dob.year}
                         />
                         </div>                                                   
                         
