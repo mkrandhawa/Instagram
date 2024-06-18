@@ -1,21 +1,20 @@
-import React, {useState, useEffect} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import Input from '../login/inputsFields';
 import { Link } from 'react-router-dom';
 import { regEx } from './regEx';
+import { UserContext } from '../context/userContext';
 
 export default function SignupForm(){
+
     const navigate = useNavigate();
+
+    const { user, setUser} = useContext(UserContext);
+
 
     let [enabled, setEnabled] = useState(false);
     let [isHovered, setIsHovered] = useState(false);
-    let [user, setUser] = useState({
-        emailPhone:'',
-        name:'',
-        username:'',
-        password:'',
-        
-    })
+  
 
     //Change the background color
     const getBackgroundColor = () => {
@@ -34,12 +33,12 @@ export default function SignupForm(){
     //Handle Next Button Click
     const handleClick = (event) =>{
         event.preventDefault();
-
         navigate('/accounts/signup/birthday')
     }
 
     
     useEffect(()=>{
+        console.log(user);
         const isEmailPhone = user.emailPhone.length>=10 && 
                             (regEx.find(item=>item.name==='email').reg.test(user.emailPhone) || 
                             regEx.find(item=>item.name==='phone').reg.test(user.emailPhone));
@@ -52,7 +51,7 @@ export default function SignupForm(){
         setEnabled(isEnabled);
          
 
-    }, [user, enabled]);
+    }, [user, setEnabled]);
 
 
     return(
@@ -85,7 +84,7 @@ export default function SignupForm(){
                         autoCapitalize="off"
                         autoCorrect="off"
                         required 
-                        value={user.email}
+                        value={user.emailPhone}
                         onChange={handleChange}
                         />
                     <Input 
