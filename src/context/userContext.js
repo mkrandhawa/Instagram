@@ -4,8 +4,8 @@ import React, { createContext, useState } from 'react';
 export const UserContext = createContext();
 
 export default function UserProvider(props) {
-   
-    const [user, setUser] = useState({
+
+    const initialUserState = {
         emailPhone: '',
         name: '',
         username: '',
@@ -14,12 +14,17 @@ export default function UserProvider(props) {
             month: '',
             day: '',
             year: ''
-            }
-        
-    });
+        }
+    };
+   
+    const [user, setUser] = useState(initialUserState);
+
+    const resetUser = ()=>{
+        setUser(initialUserState);
+    }
 
     return (
-        <UserContext.Provider value={{user, setUser }}>
+        <UserContext.Provider value={{user, setUser , resetUser}}>
             {props.children}
         </UserContext.Provider>
     );
