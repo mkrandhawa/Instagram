@@ -1,6 +1,8 @@
 import { useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import Input from "./inputsFields";
+import {postData} from '../fetchRoute/fetchPost'
+
 
 export function LoginForm() {
 
@@ -31,24 +33,6 @@ export function LoginForm() {
 
   
 
-  //POST FUNCTION --> Post sent to check the user details
-  async function postData(url, user) {
-    const response = await fetch(url, {
-      method: "POST", 
-      mode: "cors", 
-      cache: "no-cache", 
-      credentials: "same-origin", 
-      headers: {
-        "Content-Type": "application/json",
-      },
-      redirect: "follow",
-      referrerPolicy: "no-referrer", 
-      body: JSON.stringify(user), 
-    });
-    return response.json();
-  }
-
-
 
   const handleClick = (event)=>{
     event.preventDefault();
@@ -56,12 +40,12 @@ export function LoginForm() {
     console.log('i have been clicked');
         event.preventDefault();
 
-        postData("http://localhost:4000/api/v1/users/login", { user })
+        postData("http://localhost:4000/api/v1/users/login", user)
         .then((response) => {
           console.log(response)
           console.log('im insied posr')
           if(response.status === 'success'){
-            console.log(user); // JSON data parsed by `data.json()` call
+            console.log(user); 
             navigate('/home')
           }else{
             console.error('Login error' , response.message)
