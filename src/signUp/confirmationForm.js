@@ -23,7 +23,6 @@ export default function ConfirmationForm(){
 
     //POST FUNCTION --> Post the completed form after the user has confirmed the code
     async function postData(url, user) {
-    // Default options are marked with *
     const response = await fetch(url, {
       method: "POST", 
       mode: "cors", 
