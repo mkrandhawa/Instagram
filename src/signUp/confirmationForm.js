@@ -51,11 +51,16 @@ export default function ConfirmationForm(){
         event.preventDefault();
 
         postData("http://localhost:4000/api/v1/users/signup", { user })
-        .then((user) => {
-            console.log(user); // JSON data parsed by `data.json()` call
+        .then((response) => {
+            if (response.status==='success'){
+                console.log(user); // JSON data parsed by `data.json()` call
             resetUser(); // Reset user details after successful submission
 
             navigate('/')
+            }else{
+                console.log('Signup Error', response.message);
+            }
+            
           })
           .catch(error => console.error('Error:', error));
         
