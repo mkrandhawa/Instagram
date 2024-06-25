@@ -6,10 +6,12 @@ import { UserContext } from '../context/userContext';
 
 
 
+  
 
 export default function ConfirmationForm(){
 
-    const {user} = useContext(UserContext);
+
+    const {user, resetUser} = useContext(UserContext);
 
     let [code, setCode] = useState('');
 
@@ -19,6 +21,24 @@ export default function ConfirmationForm(){
 
     const navigate = useNavigate();
 
+    //POST FUNCTION --> Post the completed form after the user has confirmed the code
+    async function postData(url, user) {
+    // Default options are marked with *
+    const response = await fetch(url, {
+      method: "POST", 
+      mode: "cors", 
+      cache: "no-cache", 
+      credentials: "same-origin", 
+      headers: {
+        "Content-Type": "application/json",
+      },
+      redirect: "follow",
+      referrerPolicy: "no-referrer", 
+      body: JSON.stringify(user), 
+    });
+    return response.json();
+  }
+  
 
     const getBackgroundColor = () => {
         if (enabled) {
@@ -27,8 +47,19 @@ export default function ConfirmationForm(){
         
     };
 
-    const handleClick = ()=>{
-        navigate('/')
+    const handleClick = (event)=>{
+        console.log('i have been clicked');
+        event.preventDefault();
+
+        postData("http://localhost:4000/api/v1/users/signup", { user })
+        .then((user) => {
+            console.log(user); // JSON data parsed by `data.json()` call
+            resetUser(); // Reset user details after successful submission
+
+            navigate('/')
+          })
+          .catch(error => console.error('Error:', error));
+        
     }
 
 
@@ -67,7 +98,7 @@ export default function ConfirmationForm(){
 
                 <div className="form confirmationForm">
                     
-                    <form method="POST">
+                    <form onSubmit={handleClick}>
                         <Input 
                             className='email codeInput'
                             type="text"
@@ -87,9 +118,7 @@ export default function ConfirmationForm(){
                             onMouseEnter={()=>setIsHovered(true)}
                             onMouseLeave={()=>setIsHovered(false)}
                             style={{backgroundColor: getBackgroundColor()}}
-                            disabled={!enabled}  
-                            onClick={handleClick}
-                            
+                            disabled={!enabled}                              
                         >   
                             Next
                         </button>
