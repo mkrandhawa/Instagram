@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Input from '../login/inputsFields';
 import { UserContext } from '../context/userContext';
+import {postData} from '../fetchRoute/fetchPost'
 
 
 
@@ -21,23 +22,7 @@ export default function ConfirmationForm(){
 
     const navigate = useNavigate();
 
-    //POST FUNCTION --> Post the completed form after the user has confirmed the code
-    async function postData(url, user) {
-    const response = await fetch(url, {
-      method: "POST", 
-      mode: "cors", 
-      cache: "no-cache", 
-      credentials: "same-origin", 
-      headers: {
-        "Content-Type": "application/json",
-      },
-      redirect: "follow",
-      referrerPolicy: "no-referrer", 
-      body: JSON.stringify(user), 
-    });
-    return response.json();
-  }
-  
+
 
     const getBackgroundColor = () => {
         if (enabled) {
@@ -50,13 +35,12 @@ export default function ConfirmationForm(){
         console.log('i have been clicked');
         event.preventDefault();
 
-        postData("http://localhost:4000/api/v1/users/signup", { user })
+        postData("http://localhost:4000/api/v1/users/signup", user )
         .then((response) => {
             if (response.status==='success'){
-                console.log(user); // JSON data parsed by `data.json()` call
-            resetUser(); // Reset user details after successful submission
-
-            navigate('/')
+                console.log(user); 
+            resetUser();
+            navigate('/home')
             }else{
                 console.log('Signup Error', response.message);
             }
