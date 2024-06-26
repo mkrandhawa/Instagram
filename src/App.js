@@ -5,6 +5,7 @@ import SignUpPage from "./signUp/signUpPage";
 import BirthdayPage from "./signUp/birthdayPage";
 import ConfirmationPage from "./signUp/confirmationPage";
 import UserProvider from "./context/userContext";
+import CheckAuthorization from "./home/authorisation";
 
 
 
@@ -23,6 +24,8 @@ export default function App(){
                  <Route exact path='/accounts/signup/confirmation' element={<ConfirmationPage />} />
 
                 <Route exact path='/' element={<LoginPage />} />
+
+                <Route exact path='/home' element={<CheckAuthorization />} />
 
                     
             </Routes>
