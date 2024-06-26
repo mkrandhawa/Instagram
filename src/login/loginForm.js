@@ -1,4 +1,4 @@
-import { useEffect, useState} from "react";
+import React, { useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import Input from "./inputsFields";
 import {postData} from '../fetchRoute/fetchPost'
@@ -31,8 +31,6 @@ export function LoginForm() {
     setUser({...user, [name]: value})
   }
 
-  
-
 
   const handleClick = (event)=>{
     event.preventDefault();
@@ -42,8 +40,8 @@ export function LoginForm() {
 
         postData("http://localhost:4000/api/v1/users/login", user)
         .then((response) => {
-          console.log(response)
-          console.log('im insied posr')
+          console.log('I am in login', response)
+      
           if(response.status === 'success'){
             console.log(user); 
             navigate('/home')
