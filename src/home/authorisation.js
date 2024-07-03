@@ -1,4 +1,5 @@
 import React, { useEffect, useState} from 'react';
+import SideBar from '../navigation/sideNavigation';
 
 export default function CheckAuthorization (){
 
@@ -26,7 +27,7 @@ export default function CheckAuthorization (){
     return(
         <div>
             {isLogged ? (
-                <h1>Hello</h1>
+                <SideBar />
             ) : (
                 <h1>Sei brutto</h1>
             )}
