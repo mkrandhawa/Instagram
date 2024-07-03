@@ -25,7 +25,7 @@ export default function App(){
 
                 <Route exact path='/' element={<LoginPage />} />
 
-                <Route exact path='/home' element={<CheckAuthorization />} />
+                <Route exact path='/home' element={<CheckAuthorization />} /> 
 
                     
             </Routes>
