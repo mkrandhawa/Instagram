@@ -4,8 +4,12 @@ export default function NavItem(props) {
     const { icon: Icon, label } = props;
     return (
         <div className={label.toLowerCase()}>
-            <span><Icon /></span>
-            <span className="navItem">{label}</span>
+            <div className="icon">
+            <span><Icon  fontSize='large'/></span>
+            </div>
+            <div className="navItem">
+            <span>{label}</span>
+            </div>
         </div>
     );
 }
