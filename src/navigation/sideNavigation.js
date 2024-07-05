@@ -23,7 +23,7 @@ export default function SideBar() {
             <div className="sideNavigation">
                 <div className="logo logoSign homeLogo"></div>
 
-
+                <div className="items">
                 <NavItem icon={HomeOutlinedIcon} label="Home" />
                 <NavItem icon={SearchIcon} label="Search" />
                 <NavItem icon={ExploreOutlinedIcon} label="Explore" />
@@ -33,14 +33,23 @@ export default function SideBar() {
                 <NavItem icon={AddBoxOutlinedIcon} label="Create" />
 
                 <div className="user">
-                    <span className="profilePicture">Profile picture</span>
-                    <span className="profile">Profile</span>
+                    <div className="profilePicture"> 
+                        <span>pic</span>
+                    </div>
+                    <div className="profile">
+                        <span>Profile</span>
+                    </div>
                 </div>
-
+                </div>
                 <div className="more">
-                    <span className="dropdown">Three lines</span>
-                    <span className="options">More</span>
+                    <div className="dropdown">
+                        <span>Three lines</span>
+                    </div>
+                    <div className="options">
+                        <span >More</span>
+                    </div>
                 </div>
+                
             </div>
         </section>
     )
