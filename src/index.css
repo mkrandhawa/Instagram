@@ -768,3 +768,34 @@ select {
   margin-right: 12px;
   margin-bottom: 16px;
 }
+
+.items, .more{
+  padding-left: 12px;
+  font-size: 14px;
+}
+
+.more{
+  display: flex;
+  justify-content: left;
+  align-items: flex-end;
+  flex-direction: row;
+}
+
+.home, .search, .explore, .reels, .messages, .notifications, .create, .user, .more{
+  padding-top: 10px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 18px;
+  line-height: 14px;
+}
+
+.icon {
+  height: 48px; /* Adjust the size here */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
