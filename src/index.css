@@ -751,15 +751,15 @@ select {
   justify-content: left;
   align-items: flex-start;
   flex-direction: column;
-  padding-top: 8px;
+  /* padding-top: 8px;
   padding-left: 12px;
   padding-right: 12px;
-  padding-bottom: 20px;
+  padding-bottom: 20px; */
   box-sizing: border-box;
   border-right-width: 1px;
   width: 244px;
   height: 100dvh;
-
+  padding: 1rem;
 }
 
 .homeLogo{
@@ -774,14 +774,8 @@ select {
   font-size: 14px;
 }
 
-.more{
-  display: flex;
-  justify-content: left;
-  align-items: flex-end;
-  flex-direction: row;
-}
 
-.home, .search, .explore, .reels, .messages, .notifications, .create, .user, .more{
+.home, .search, .explore, .reels, .messages, .notifications, .create, .user{
   padding-top: 10px;
   display: flex;
   justify-content: left;
@@ -792,10 +786,40 @@ select {
 }
 
 .icon {
-  height: 48px; /* Adjust the size here */
+  height: 48px; 
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  font-size: 24px;
 
 }
+
+.more {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 18px;
+  line-height: 14px;
+  margin-top: auto; 
+}
+
+.hamburgerMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburgerMenu span {
+  display: block;
+  height: 3px; 
+  width: 100%;
+  background-color: black; 
+  border-radius: 2px; 
+}
+
 
