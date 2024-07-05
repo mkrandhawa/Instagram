@@ -42,13 +42,14 @@ export default function SideBar() {
                 </div>
                 </div>
                 <div className="more">
-                    <div className="dropdown">
-                        <span>Three lines</span>
+                    <div className="hamburgerMenu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
-                    <div className="options">
-                        <span >More</span>
-                    </div>
+                    <span className="options">More</span>
                 </div>
+
                 
             </div>
         </section>
