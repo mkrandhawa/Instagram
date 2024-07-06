@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 // import { Link } from "react-router-dom";
 // import HomeIcon from '@mui/icons-material/Home';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
@@ -16,10 +16,16 @@ import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 import NavItem from "./navItem";
+import { UserContext } from '../context/userContext';
 
 export default function SideBar() {
+    
+    const {user} = useContext(UserContext);
+    console.log('this is user', user);
+    console.log(user.picture)
+
     return (
-        <section>
+        <>
             <div className="sideNavigation">
                 <div className="logo logoSign homeLogo"></div>
 
@@ -41,7 +47,7 @@ export default function SideBar() {
 
                     <div className="user">
                         <div className="profilePicture"> 
-                            <span>pic</span>
+                            <img src={`http://localhost:4000/${user.picture}`} alt="Profile" />
                         </div>
                         <div className="profile">
                             <span>Profile</span>
@@ -56,12 +62,12 @@ export default function SideBar() {
                         <span></span>
                         <span></span>
                     </div>
-                    <div className="options">
+                    <div>
                         <span>More</span>
                     </div>
                 </div>
                 
             </div>
-        </section>
+        </>
     )
 }
