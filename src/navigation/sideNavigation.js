@@ -24,32 +24,42 @@ export default function SideBar() {
                 <div className="logo logoSign homeLogo"></div>
 
                 <div className="items">
-                <NavItem icon={HomeOutlinedIcon} label="Home" />
-                <NavItem icon={SearchIcon} label="Search" />
-                <NavItem icon={ExploreOutlinedIcon} label="Explore" />
-                <NavItem icon={() => <span>Reels Icon</span>} label="Reels" />
-                <NavItem icon={SendOutlinedIcon} label="Messages" />
-                <NavItem icon={FavoriteBorderIcon} label="Notifications" />
-                <NavItem icon={AddBoxOutlinedIcon} label="Create" />
+                    <NavItem icon={HomeOutlinedIcon} label="Home" />
+                    <NavItem icon={SearchIcon} label="Search" />
+                    <NavItem icon={ExploreOutlinedIcon} label="Explore" />
 
-                <div className="user">
-                    <div className="profilePicture"> 
-                        <span>pic</span>
+                    <div className="reels">
+                        <div className="reel"></div>
+                        <div>
+                            <span>Reels</span>
+                        </div>
                     </div>
-                    <div className="profile">
-                        <span>Profile</span>
+
+                    <NavItem icon={SendOutlinedIcon} label="Messages" />
+                    <NavItem icon={FavoriteBorderIcon} label="Notifications" />
+                    <NavItem icon={AddBoxOutlinedIcon} label="Create" />
+
+                    <div className="user">
+                        <div className="profilePicture"> 
+                            <span>pic</span>
+                        </div>
+                        <div className="profile">
+                            <span>Profile</span>
+                        </div>
                     </div>
+
                 </div>
-                </div>
+
                 <div className="more">
                     <div className="hamburgerMenu">
                         <span></span>
                         <span></span>
                         <span></span>
                     </div>
-                    <span className="options">More</span>
+                    <div className="options">
+                        <span>More</span>
+                    </div>
                 </div>
-
                 
             </div>
         </section>
