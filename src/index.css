@@ -409,7 +409,7 @@ select {
 .uName:focus,
 .pass:focus{
   outline: none;
-  border-color: #bdbdbd; /* Change to your desired color */
+  border-color: #bdbdbd;
 }
 
 
@@ -746,17 +746,20 @@ select {
   padding-bottom: 0;
 }
 
-.sideNavigation{
+.sideNavigation {
   display: flex;
   justify-content: left;
   align-items: flex-start;
   flex-direction: column;
   box-sizing: border-box;
   border-right-width: 1px;
-  width: 244px;
-  height: 100dvh;
+  border-right-style: solid; 
+  border-right-color: rgb(144, 144, 144);; 
+  width: 300px;
+  height: 100vh; 
   padding: 1rem;
 }
+
 
 .homeLogo{
   margin-top: 25px;
@@ -798,6 +801,7 @@ select {
   font-size: 18px;
   line-height: 14px;
   margin-top: auto; 
+  padding-bottom: 30px;
 }
 
 .hamburgerMenu {
@@ -807,6 +811,8 @@ select {
   width: 30px;
   height: 20px;
   cursor: pointer;
+  padding-right: 8px;
+
 }
 
 .hamburgerMenu span {
@@ -836,4 +842,19 @@ select {
   
 }
 
+.user{
+  height: 48px;
+}
 
+.profilePicture{
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profilePicture > img{
+
+  height: 32px;
+  width: 32px;
+}
