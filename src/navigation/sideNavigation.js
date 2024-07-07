@@ -62,7 +62,7 @@ export default function SideBar() {
                         <span></span>
                         <span></span>
                     </div>
-                    <div>
+                    <div className="moreText">
                         <span>More</span>
                     </div>
                 </div>
