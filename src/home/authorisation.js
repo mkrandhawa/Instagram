@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext} from 'react';
-import SideBar from '../navigation/sideNavigation';
+import HomePage from './homePage';
 import { UserContext } from '../context/userContext';
+import LoginPage from '../login/loginPage';
 
 
 export default function CheckAuthorization (){
@@ -30,13 +31,13 @@ export default function CheckAuthorization (){
     
 
     return(
-        <div>
+        <>
             {isLogged ? (
-                <SideBar />
+                <HomePage />
             ) : (
-                <h1>Sei brutto</h1>
+                <LoginPage />
             )}
-        </div>
+        </>
     )
 
 
