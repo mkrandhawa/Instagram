@@ -16,7 +16,6 @@ export default function User({user}){
                     <div className="profile profileName">
                         <span>Suggested for you</span>
                     </div>
-                    
                 </div>
                 <div className="switchText">
                     <span>Follow</span>
