@@ -10,12 +10,14 @@ export default function HomePage(){
         <main className="homeMain">
             <SideBar />
             <div className="homePage">
-                <div className="storyBar"> 
-                    <StoryBar />
+                <div className="homeContainer">
+                    <div className="storyBar"> 
+                        <StoryBar />
+                    </div>
+                    <div className="card">
+                        <h1>Hello how are you</h1>
+                    </div>
                 </div>
-                <div className="card">
-                    <h1>Hello how are you</h1>
-                </div>  
                 <div className="suggestion">
                     <UserSuggestions />
                 </div>
