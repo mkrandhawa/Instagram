@@ -691,7 +691,6 @@ select {
 
 }
 
-
 .resendCode{
   color:rgb(0, 149, 246);
   line-height: 14px;
@@ -877,14 +876,69 @@ select {
 }
 
 .homePage{
-  width: calc(100% -244px);
   font-size: 14px;
   line-height: 14px;
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   flex-grow: 1;
   order: 4;
+}
+
+.suggestion{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 5rem;
+}
+
+.mainPicture > img{
+  height: 38px;
+  width: 38px;
+}
+
+.profileUser{
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.profileName{
+  font-size: 14px;
+  font-weight: 400;
+
+}
+
+.suggestionText{
+  padding-top: 20px;
+  line-height: 14px;
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+
+.userDetails{
+  width: 120px;
+}
+
+.suggestionContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.switchText{
+  padding-left: 7rem;
+  color:#0065ff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.seeAll{
+  padding-left: 8rem;
+  font-size: 14px;
+  font-weight: 600;
+
 }
