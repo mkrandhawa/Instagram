@@ -946,5 +946,41 @@ select {
   padding-left: 8rem;
   font-size: 14px;
   font-weight: 600;
+}
 
+.storyUser {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  font-size: 14px;
+  font-weight: 100;
+  flex-wrap: wrap; 
+  margin-bottom: 2rem;
+}
+
+.stories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 5px;
+  margin-right:5px; 
+}
+
+.profilePicture {
+  margin-bottom: 5px; 
+}
+
+.userName {
+  margin-bottom: 1rem;
+}
+
+.storyUsername{
+  font-size: 14px;
+  font-weight: 400;
+  max-width: 5ch;
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
 }
