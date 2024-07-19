@@ -882,9 +882,13 @@ select {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   flex-grow: 1;
   order: 4;
+}
+
+.homeContainer{
+  padding-top: 3rem;
 }
 
 .suggestion{
@@ -892,7 +896,9 @@ select {
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  padding-left: 5rem;
+  padding-left: 15rem;
+  padding-top: 3rem;
+
 }
 
 .mainPicture > img{
