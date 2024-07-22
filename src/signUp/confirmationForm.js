@@ -32,7 +32,6 @@ export default function ConfirmationForm(){
     };
 
     const handleClick = (event)=>{
-        console.log('i have been clicked');
         event.preventDefault();
 
         postData("http://localhost:4000/api/v1/users/signup", user )
