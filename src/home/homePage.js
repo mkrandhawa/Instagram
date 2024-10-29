@@ -2,10 +2,11 @@ import React from "react";
 import SideBar from '../navigation/sideNavigation';
 import StoryBar from "../navigation/storyNavigation";
 import UserSuggestions from "../navigation/userSuggestions";
-
-
+import UserCard from "./card";
 
 export default function HomePage(){
+
+
     return(
         <main className="homeMain">
             <SideBar />
@@ -14,13 +15,15 @@ export default function HomePage(){
                     <div className="storyBar"> 
                         <StoryBar />
                     </div>
-                    <div className="card">
-                        <h1>Hello how are you</h1>
-                    </div>
+
+                    <UserCard />
                 </div>
+            
                 <div className="suggestion">
                     <UserSuggestions />
                 </div>
+
+                
             </div>
         </main>
     )
