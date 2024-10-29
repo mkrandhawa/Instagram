@@ -885,10 +885,16 @@ select {
   align-items: flex-start;
   flex-grow: 1;
   order: 4;
+  column-gap: 10rem;
 }
 
 .homeContainer{
   padding-top: 3rem;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5rem;
 }
 
 .suggestion{
@@ -896,15 +902,16 @@ select {
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  padding-left: 15rem;
   padding-top: 3rem;
 
 }
 
 .mainPicture > img{
-  height: 38px;
-  width: 38px;
+  height: 50px;
+  width: 50px;
+  margin-right: 12px;
 }
+
 
 .profileUser{
   font-size: 16px;
@@ -929,6 +936,34 @@ select {
   width: 120px;
 }
 
+.userCard{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.userHeader{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user_name{
+  margin-bottom: 0rem;
+}
+
+.threeDots{
+  position: relative;
+  display: block;
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+  padding-left: 10rem;
+  margin-bottom: 1rem;
+  font-size: 16px;
+}
+
+
 .suggestionContainer{
   display: flex;
   align-items: center;
@@ -943,7 +978,7 @@ select {
 }
 
 .seeAll{
-  padding-left: 8rem;
+  padding-left: 9.5rem;
   font-size: 14px;
   font-weight: 600;
 }
@@ -973,6 +1008,10 @@ select {
 }
 
 .userName {
+  margin-bottom: 1rem;
+}
+
+.user_name{
   margin-bottom: 1rem;
 }
 
