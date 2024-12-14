@@ -70,9 +70,9 @@ code {
 .logo {
   margin-top: 32px;
   margin-bottom: 12px;
-  background-image: url("https://static.cdninstagram.com/rsrc.php/v3/yM/r/8n91YnfPq0s.png");
-  background-position: 0px -52px;
-  background-size: auto;
+  background-image: url("https://static.cdninstagram.com/rsrc.php/v4/ym/r/BQdTmxpRI6f.png");
+  background-position: 0px -0px;
+  background-size: cover;
   width: 170px;
   height: 51px;
   background-repeat: no-repeat;
@@ -760,6 +760,8 @@ select {
   width: 250px;
   height: 100vh; 
   padding: 1rem;
+  margin-top: -2rem;
+
 }
 
 
@@ -860,7 +862,7 @@ select {
   height: auto;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .profilePicture > img{
@@ -889,12 +891,12 @@ select {
 }
 
 .homeContainer{
-  padding-top: 3rem;
+  padding-top: 1rem;
   flex-wrap: wrap;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: 5rem;
+  gap: 2rem;
 }
 
 .suggestion{
@@ -902,7 +904,7 @@ select {
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  padding-top: 3rem;
+  padding-top: 1rem;
 
 }
 
@@ -939,13 +941,18 @@ select {
 .userCard{
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  flex-direction: column;
 }
 
 .userHeader{
-  display: flex;
+  display: grid;
   align-items: center;
-  justify-content: center;
+  justify-content: normal;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 500px;
 }
 
 .user_name{
@@ -1022,4 +1029,52 @@ select {
   white-space: nowrap; 
   overflow: hidden; 
   text-overflow: ellipsis; 
+}
+
+.videoSpace{
+  height: 200px;
+}
+
+.userPost{
+  width: 500px;
+  height: 500px;
+}
+
+.swiper-container {
+  width: 500px; 
+  height: 500px; /* Adjust the height to your preference */
+}
+
+/* Container for the swiper to make sure it's positioned properly */
+.swiper-container {
+  position: relative;
+}
+
+/* Swiper navigation arrows */
+.swiper-button-next, .swiper-button-prev {
+  position: absolute;
+  top: 50%; 
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.5); 
+  color: #000000; 
+  padding: 10px;
+  border-radius: 50%; 
+  z-index: 10; 
+}
+
+/* Position the right arrow on the right side */
+.swiper-button-next {
+  right: 10px;
+}
+
+/* Position the left arrow on the left side */
+.swiper-button-prev {
+  left: 10px;
+}
+
+
+.userPost {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
